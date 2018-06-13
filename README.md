@@ -2,14 +2,20 @@
 
 ### Title:
 
+Emojicryptor / Emojify
+
 ### Team:
 James Covino, Cody Hegwer, Annie Lydens
 
 ### Vision statement:
 
+Provide a web interface for users to send encrypted "emoji" messages to friends. At a bare minimum we will be able to host a website available to the public. Users will be able to insert a message, select a decryption key, and will receive an encrypted message consisting of emojis to send to friends. The person receiving the message will be able to input the message, but will only decrypt given the correct key.
+
+If time allows, we would like to develop an API that can be accessed from other websites. Users may have the option to encrypt their messages with themed emoji librarys. Additionally, we would like to implement a better encryption algorithm, so messages are harder to decrypt. 
 
 ### Motivation:
 
+We found a good balance of utilizing the lessons learned throughout the course with an interesting coding problem. The combination of the two and working as a team will challenge and better us as young developers.
 
 ### Risks:
 
