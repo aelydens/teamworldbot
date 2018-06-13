@@ -6,19 +6,19 @@
 James Covino, Cody Hegwer, Annie Lydens
 
 ### Vision statement:
-(Cody)
+
 
 ### Motivation:
-(Annie/Cody?)
+
 
 ### Risks:
-(James)
+
 
 ### Mitigation Strategy for risks:
-(James)
+
 
 ### Development Method:
-(Annie)
+
 
 For this project, we've decided to use kanban as our development method.
 
@@ -29,6 +29,5 @@ To support our kanban process, we plan to use a Trello board to track work in pr
 We plan to continuously deliver and deploy work, and we will set up continuous integration on our project.
 
 ###  Project tracking:
-(Annie)
 
 As mentioned above, we plan to use a [Trello board](https://trello.com/b/xqkROHN7/teamworldbot) for project tracking. We chose Trello as our project tracking software because it's easy to use, it supports a kanban workflow, and because members of our team already have experience with it.
