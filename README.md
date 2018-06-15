@@ -24,7 +24,7 @@ II.  Tem Distribution: Our small team consists of members with different skill s
 
 III. Technical Complexity: The Encryption-Decryption Algorithm will require organic development and testing. In addition, Front End development and API deployment will require the application of new skills in a short amount of time.
 
-V. Time (6 weeks): The limited time to work through the development cycle and address any potential problems presents significant risk.  It will be crucial that we honestly asses our skillsets and adequately define a project that can be completed in the allocated time. 
+V. Time (6 weeks): The limited time to work through the development cycle and address any potential problems presents significant risk.  It will be crucial that we honestly evaluate our skillsets and adequately define a project that can be completed in the allocated time. 
 	
 VI.  Scope and Feature Creep:  Failure to define the project and deviate from requirements and features will increase the risk of producing an incomplete project.
 
