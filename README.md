@@ -25,11 +25,11 @@ II.  Tem Distribution: Our small team consists of members with different skill s
 
 III. Technical Complexity: The Encryption-Decryption Algorithm will require organic development and testing. In addition, Front End development and API deployment will require the application of new skills in a short amount of time.
 
-V. Time (6 weeks): The limited time to work through the development cycle and address any potential problems presents significant risk.  It will be crucial that we honestly evaluate our skillsets and adequately define a project that can be completed in the allocated time. 
+IV. Time (6 weeks): The limited time to work through the development cycle and address any potential problems presents significant risk.  It will be crucial that we honestly evaluate our skillsets and adequately define a project that can be completed in the allocated time. 
 	
-VI.  Scope and Feature Creep:  Failure to define the project and deviate from requirements and features will increase the risk of producing an incomplete project.
+V.  Scope and Feature Creep:  Failure to define the project and deviate from requirements and features will increase the risk of producing an incomplete project.
 
-VII. Unknown Risk: All projects have unknown risks. We have to be aware of unknown problems that could arise and be generous in allocating time to complete tasks. In addition, we must be realistic of the time and complexity factors of the project. Unforeseen problems have the ability to drastically impact the timeline. 
+VI. Unknown Risk: All projects have unknown risks. We have to be aware of unknown problems that could arise and be generous in allocating time to complete tasks. In addition, we must be realistic of the time and complexity factors of the project. Unforeseen problems have the ability to drastically impact the timeline. 
 
 VII. Experience: We are emerging computer scientists with limited to no experience with a collaborative software project.  The project will require the application of new skills, and the time to complete tasks will generally be longer and more arduous than for a veteran developer.  Our ability to estimate complexity and timing has not been hardened with experience, so there’s a risk of underestimating.
 
@@ -42,11 +42,11 @@ II.  Team Distribution:  A slack Channel has been setup to allow for constant co
 III. Technical Complexity:  The team will develop a proof of principle algorithm for encryption/decryption in parallel to investigating the deployment strategy.  If the project is overly complex given the timeline, we will simplify the project.
 While we will be working in parallel in front end and back end development, we will ensure that we complete the encryption functionality as a stand alone script early in the timeline.
 
-V. Time (6 weeks):   The course syllabus provides a time-table with set deliverables that will help keep us on track. In addition to the syllabus we will utilize a gantt chart for project planning and tracking. 
+IV. Time (6 weeks):   The course syllabus provides a time-table with set deliverables that will help keep us on track. In addition to the syllabus we will utilize a gantt chart for project planning and tracking. 
 	
-VI.  Scope and Feature Creep:  The project will be flexible initially as we asses the technical complexity and timing. However, after the end of June we will have our project clearly defined and working toward completion.  We will limit any additional features if they impose risk on timeline.
+V.  Scope and Feature Creep:  The project will be flexible initially as we asses the technical complexity and timing. However, after the end of June we will have our project clearly defined and working toward completion.  We will limit any additional features if they impose risk on timeline.
 
-VII. Unknown Risk:  We will assume 15% more time to complete given tasks to compensate for unknown risks. Additionally, we will be mindful of project functionality, timing and complexity.
+VI. Unknown Risk:  We will assume 15% more time to complete given tasks to compensate for unknown risks. Additionally, we will be mindful of project functionality, timing and complexity.
 
 VII. Experience: We will lean on advice and direction from an outside advisor (Professor) in regards to realistic project goals, complexity and timing.  The project will require the application of new skills which we will tackle through the class and independent learning.
 
