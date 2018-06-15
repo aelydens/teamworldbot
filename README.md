@@ -42,7 +42,7 @@ II.  Team Distribution:  A slack Channel has been setup to allow for constant co
 III. Technical Complexity:  The team will develop a proof of principle algorithm for encryption/decryption in parallel to investigating the deployment strategy.  If the project is overly complex given the timeline, we will simplify the project.
 While we will be working in parallel in front end and back end development, we will ensure that we complete the encryption functionality as a stand alone script early in the timeline.
 
-V. Time (6 weeks):   The course syllabus provides a time-table with set deliverables that will help keep us on track. In addition, to syllabus we will utilize a gantt chart for project planning and tracking. 
+V. Time (6 weeks):   The course syllabus provides a time-table with set deliverables that will help keep us on track. In addition to the syllabus we will utilize a gantt chart for project planning and tracking. 
 	
 VI.  Scope and Feature Creep:  The project will be flexible initially as we asses the technical complexity and timing. However, after the end of June we will have our project clearly defined and working toward completion.  We will limit any additional features if they impose risk on timeline.
 
