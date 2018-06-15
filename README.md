@@ -18,6 +18,7 @@ If time allows, we would like to develop an API that can be accessed from other 
 We found a good balance of utilizing the lessons learned throughout the course with an interesting coding problem. The combination of the two and working as a team will challenge and better us as young developers.
 
 ### Risks:
+
 I.  Working on a team with varied operating systems: Team members systems (PC and MAC) may present some unknown challenges.  The application will require specific dependencies and an identical development environment which will take some coordination or may require a VirtualBox VM development environment to  collaborate.
 
 II.  Tem Distribution: Our small team consists of members with different skill sets, backgrounds and locations.  We will all be working remotely.  Lack of Team cohesion, communication and ownership will increase risk to the project. 
@@ -28,12 +29,11 @@ V. Time (6 weeks): The limited time to work through the development cycle and ad
 	
 VI.  Scope and Feature Creep:  Failure to define the project and deviate from requirements and features will increase the risk of producing an incomplete project.
 
-VII. Unknown Risk: All projects have unknown risks. We have to be aware of unknown problems that could arise and be generous in allocating time to complete tasks. In addition, we must be realistic of the time and complexity factors of the project. Unforeseen problems have the ability to drastically impact complexity and timeline. 
+VII. Unknown Risk: All projects have unknown risks. We have to be aware of unknown problems that could arise and be generous in allocating time to complete tasks. In addition, we must be realistic of the time and complexity factors of the project. Unforeseen problems have the ability to drastically impact the timeline. 
 
 VII. Experience: We are emerging computer scientists with limited to no experience with a collaborative software project.  The project will require the application of new skills, and the time to complete tasks will generally be longer and more arduous than for a veteran developer.  Our ability to estimate complexity and timing has not been hardened with experience, so there’s a risk of underestimating.
 
 ### Mitigation Strategy for risks:
-
 
 I.  Working on a team with varied operating systems:  If problems arise with the current MAC and PC collaboration we will utilize a VirtualBox VM.  CU Boulder Computer Science department has one available in the link below. https://foundation.cs.colorado.edu/vm/
  
@@ -51,7 +51,6 @@ VII. Unknown Risk:  We will assume 15% more time to complete given tasks to comp
 VII. Experience: We will lean on advice and direction from an outside advisor (Professor) in regards to realistic project goals, complexity and timing.  The project will require the application of new skills which we will tackle through the class and independent learning.
 
 ### Development Method:
-
 
 For this project, we've decided to use kanban as our development method.
 
