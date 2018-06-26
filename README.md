@@ -11,7 +11,7 @@ James Covino, Cody Hegwer, Annie Lydens
 
 Provide a web interface for users to send encrypted "emoji" messages to friends. At a bare minimum we will be able to host a website available to the public. Users will be able to insert a message, select a decryption key, and will receive an encrypted message consisting of emojis to send to friends. The person receiving the message will be able to input the message, but will only decrypt given the correct key.
 
-If time allows, we would like to develop an API that can be accessed from other websites. Users may have the option to encrypt their messages with themed emoji librarys. Additionally, we would like to implement a better encryption algorithm, so messages are harder to decrypt. 
+If time allows, we would like to develop an API that can be accessed from other websites. Users may have the option to encrypt their messages with themed emoji libraries. Additionally, we would like to implement a better encryption algorithm, so messages are harder to decrypt.
 
 ### Motivation:
 
@@ -35,14 +35,14 @@ VII. Experience: We are emerging computer scientists with limited to no experien
 
 ### Mitigation Strategy for risks:
 
-I.  Working on a team with varied operating systems:  If problems arise with the current MAC and PC collaboration we will utilize a VirtualBox VM.  CU Boulder Computer Science department has one available in the link below. https://foundation.cs.colorado.edu/vm/
+I.  Working on a team with varied operating systems:  If problems arise with the current MAC and PC collaboration we will utilize a VirtualBox VM.  CU Boulder Computer Science department has one available [here](ttps://foundation.cs.colorado.edu/vm/).
  
 II.  Team Distribution:  A slack Channel has been setup to allow for constant communication with the team. Weekly Zoom meetings will be utilized for collaboration, team interaction and team building . Trello’s Project Management tool will be utilized to assign ownership and track progress.  
 
 III. Technical Complexity:  The team will develop a proof of principle algorithm for encryption/decryption in parallel to investigating the deployment strategy.  If the project is overly complex given the timeline, we will simplify the project.
 While we will be working in parallel in front end and back end development, we will ensure that we complete the encryption functionality as a stand alone script early in the timeline.
 
-IV. Time (6 weeks):   The course syllabus provides a time-table with set deliverables that will help keep us on track. In addition to the syllabus we will utilize a gantt chart for project planning and tracking. 
+IV. Time (6 weeks):   The course syllabus provides a time-table with set deliverables that will help keep us on track. In addition to the syllabus we will utilize a Gantt chart for project planning and tracking.
 	
 V.  Scope and Feature Creep:  The project will be flexible initially as we asses the technical complexity and timing. However, after the end of June we will have our project clearly defined and working toward completion.  We will limit any additional features if they impose risk on timeline.
 
