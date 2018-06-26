@@ -8,7 +8,7 @@ import string
 
 class emoji_it:
     def __init__(self, input_string, input_key, multiplier=1):
-        self.aplhabet = string.ascii_lowercase
+        self.alphabet = string.ascii_lowercase
         self.emoji_list = list(emoji.EMOJI_ALIAS_UNICODE)
         self.multiplier = multiplier
         self.emoji_key = input_key
@@ -22,10 +22,10 @@ class emoji_it:
 
         cipher_dict = {}
         start_alphabet = self.emoji_list.index(self.emoji_key)
-        alphabet = string.ascii_lowercase
+
 
         count = 0
-        for letter in alphabet:
+        for letter in self.alphabet:
             emoji_index = ((start_alphabet + count) * self.multiplier) % len(self.emoji_list)
             cipher_dict[letter] = self.emoji_list[emoji_index]
             count += 1
@@ -80,8 +80,9 @@ def main(argv):
 
     input_text = 'Kambucha refill time'
     input_key = ':rocket:'
+    multiplier = 2
 
-    translate = emoji_it(input_text, input_key, 3)
+    translate = emoji_it(input_text, input_key, multiplier)
 
     translate.encrypt()
 
