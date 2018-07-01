@@ -12,6 +12,6 @@ def encrypt():
     form = EncryptForm()
     if form.validate_on_submit():
         flash('Encrypting... {}'.format(form.message.data))
-        return redirect('/index')
+        return redirect(url_for('index'))
 
     return render_template('encrypt.html', form=form)
