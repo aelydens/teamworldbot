@@ -1,17 +1,27 @@
-1. Create a virtual environment.
-`python3 -m venv venv`
+## Initial Setup Instructions
 
-2. Activate your virtual environment.
-`. venv/bin/activate`
+1. [Follow the instructions here to create and activate a virtual env called venv](http://flask.pocoo.org/docs/1.0/installation/)
 
-3. Upgrade pip
+Do the steps up until "Install Flask".
+
+2. Upgrade pip
 `python3 -m pip install --upgrade pip`
 
-4. Install Flask
-`pip install Flask`
+3. Install requirements
+`pip install -r requirements.txt`
 
-5. Tell Flask how to import the app
+4. Tell Flask how to import the app
 `export FLASK_APP=emojify.py`
 
-6. Run the app
+5. Run the app
 `flask run`
+
+## Installing additional flask extensions/Python packages
+
+If you install a Flask extension, update requirements.txt by installing pipreqs:
+
+`pip install pipreqs`
+
+and running the following command from the top-level project directory:
+
+`pipreqs . --ignore emojify_poc`
