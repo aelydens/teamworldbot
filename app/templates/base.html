@@ -5,8 +5,21 @@
     <title>Emojify</title>
   </head>
   <body>
-      <div>Emojify: <a href="/index">Home</a></div>
+      <div>Emojify:
+        <a href="/index">Home</a>
+        <a href="/encrypt">Encrypt a message</a>
+      </div>
+      <div>
       <hr>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
       {% block content %}{% endblock %}
   </body>
 </html>
