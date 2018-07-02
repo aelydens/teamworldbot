@@ -13,4 +13,11 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
+
+    {% if message %}
+      <div class="message">
+        Encrypted message: {{ message }}
+      </div>
+    {% endif %}
+
 {% endblock %}

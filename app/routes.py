@@ -19,8 +19,12 @@ def admin():
 def encrypt():
     form = EncryptForm()
     if form.validate_on_submit():
-        flash('Encrypting... {}'.format(form.message.data))
-        return redirect(url_for('index'))
+        # Encryption should happen here:
+        # message = emojify.encrypt(form.message.data)
+        # with error handling & messages to user
+        message = form.message.data
+        flash('Successfully encrypted!')
+        return render_template('encrypt.html', form=form, message=message)
 
     return render_template('encrypt.html', form=form)
 
