@@ -15,13 +15,16 @@ Do the steps up until "Install Flask".
 5. Tell Flask how to import the app
 `export FLASK_APP=emojify.py`
 
-6. Create the database:
+6. Tell flask to run in dev mode:
+`export FLASK_ENV=development`
+
+7. Create the database:
 `flask db init`
 
-7. Run migrations:
+8. Run migrations:
 `flask db upgrade`
 
-8. Run the app:
+9. Run the app:
 `flask run`
 
 ## Development
@@ -44,4 +47,4 @@ If you install a Flask extension, update requirements.txt by installing pipreqs:
 
 and running the following command from the top-level project directory:
 
-`pipreqs . --ignore emojify_poc`
+`pipreqs . --ignore emojify_poc --force`
