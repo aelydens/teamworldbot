@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Encrypt your messages via emoji!</h1>
-  <div>
-    <p>
-      It's extremely secure.
-    </p>
+  <div class="jumbotron">
+    <h1 class="display-4">Encrypt your messages via emoji!</h1>
+    <p class="lead">It's extremely secure.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('encrypt') }}" role="button">Encrypt a message!</a>
   </div>
 {% endblock %}

@@ -2,3 +2,11 @@
   margin: 0px;
   padding: 0px;
 }
+
+.main {
+  padding-top: 40px;
+}
+
+.navbar.fixed-bottom {
+  padding: 20px;
+}
