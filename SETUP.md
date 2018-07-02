@@ -10,11 +10,31 @@ Do the steps up until "Install Flask".
 3. Install requirements
 `pip install -r requirements.txt`
 
-4. Tell Flask how to import the app
+4. Install dotenv `pip install python-dotenv`
+
+5. Tell Flask how to import the app
 `export FLASK_APP=emojify.py`
 
-5. Run the app
+6. Create the database:
+`flask db init`
+
+7. Run migrations:
+`flask db upgrade`
+
+8. Run the app:
 `flask run`
+
+## Development
+
+**Important:**
+
+Whenever you are developing locally, you will want to start your virtual environment by running  `. venv/bin/activate` before doing any other steps.
+
+You also may want to run `flask db upgrade` if any db migrations have been added.
+
+Any changes to models should be followed up by a `flask db migrate` and a `flask db upgrade`. Undo a migration by running `flask db downgrade`.
+
+Run a python shell with the app context by running `flask shell`.
 
 ## Installing additional flask extensions/Python packages
 
