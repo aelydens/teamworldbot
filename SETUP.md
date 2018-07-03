@@ -24,8 +24,12 @@ Do the steps up until "Install Flask".
 8. Run migrations:
 `flask db upgrade`
 
-9. Run the app:
+9. Make an env file by renaming `.env.example` to `.env`
+
+10. Run the app:
 `flask run`
+
+If you have any issues with the dependencies (like in the db setup step), run `deactivate`, then `. venv/bin/activate`. Check to make sure all the requirements are satisfied by running `pip install -r requirements.txt` again, then proceed through the rest of the steps.
 
 ## Development
 
