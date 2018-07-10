@@ -134,8 +134,6 @@ class emoji_it:
             cipher_dict[str(number)] = emoji_mapping
             count += 1  
 
-
-
         return cipher_dict
 
 
@@ -143,9 +141,7 @@ class emoji_it:
         # Simple Ceasar Cypher, the emoji-key index position marks 'a',
         # the rest of the alphabet is defined from starting index 'a'
 
-        print
-        print
-
+        
         # Define the cipher dictionary, assign letter -> emoji
         cipher = self.define_cipher()
 
@@ -158,20 +154,17 @@ class emoji_it:
 
         for emoj in encrypted_message:
             print emoji.emojize(emoj),
-
-     
+        print 
 
 
     def decrypt(self, encrypted_message):
         # Simple Ceasar Cypher, the emoji-key index position marks 'a', the rest of the alphabet is defined from starting index 'a'
         # cipher dict is regenerated as in Encrpyt, but then key value pairs are reversed
 
-        print
         cipher = self.define_cipher()
         #reverse the cipher
         rev_cipher = {v: k for k, v in cipher.iteritems()}
         decrypted = []
-
 
         for symbol in encrypted_message: 
             '''  
@@ -187,16 +180,17 @@ class emoji_it:
 
         print(''.join(decrypted))
 
-      
 
 def main(argv):
 
     translate = emoji_it()
 
     opts = parse_cmdline_params(sys.argv[1:])
-    
+    file_lines = []
     with open(opts.input_file.name,"r") as fstream:
-            input_text = fstream.readline().strip()
+        for line in fstream:
+            file_lines.append(line.strip())
+   
     # If key provided: assign it
     if opts.k:
         translate.emoji_key = opts.k
@@ -207,24 +201,22 @@ def main(argv):
 
     # If encryption selected: do it    
     if opts.e:
-        translate.encrypt(input_text)
+        for input_line in file_lines:
+            translate.encrypt(input_line)
           
-
     #If decryption selected: do it 
     if opts.d:
-        unicode_it = unicode(input_text, 'utf-8')
-        '''  
-        CODY : just added ' ' to split()
-        '''
-        escaped_unicode_list = unicode_it.split(' ')
-        decode_message=[]
-        for code in escaped_unicode_list:
-            if code in translate.unicode_emoji:
-                decode_message.append(translate.unicode_emoji[code])
-            else:
-                decode_message.append(code)
+        for input_line in file_lines:
+            unicode_it = unicode(input_line, 'utf-8')
+            escaped_unicode_list = unicode_it.split(' ')
+            decode_message=[]
+            for code in escaped_unicode_list:
+                if code in translate.unicode_emoji:
+                    decode_message.append(translate.unicode_emoji[code])
+                else:
+                 decode_message.append(code)
 
-        translate.decrypt(decode_message)
+            translate.decrypt(decode_message)
        
       
 
