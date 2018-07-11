@@ -13,7 +13,6 @@ import string
 import argparse
 import sys
 
-
 def parse_cmdline_params(arg_list = None):
     """Parses commandline arguments.
     :param arg_list: arguments from the command line
@@ -219,9 +218,5 @@ def main(argv):
             translate.decrypt(decode_message)
        
       
-
-
-
-
 if __name__ == "__main__":
     main(argv)
