@@ -8,7 +8,7 @@ from app.cody import add_two
 import emoji
 import string
 import sys
-import app.emoji_class
+from app.emoji_class import emoji_it
 
 @app.route('/')
 @app.route('/index')
