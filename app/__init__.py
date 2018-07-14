@@ -12,4 +12,4 @@ login = LoginManager(app)
 login.login_view = 'login'
 
 from app import routes, models
-from app.cody import cody
+from app.cody import add_two
