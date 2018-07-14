@@ -4,7 +4,7 @@ from app.forms import EncryptForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
-from cody import add_two
+from . import add_two
 
 @app.route('/')
 @app.route('/index')
