@@ -5,6 +5,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
 from app.cody import add_two
+import emoji
 
 @app.route('/')
 @app.route('/index')
