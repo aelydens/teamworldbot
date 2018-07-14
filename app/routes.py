@@ -25,11 +25,11 @@ def encrypt():
         # with error handling & messages to user
         message = form.message.data
 
-        #message_transformed = add_two(int(message))
+        message_transformed = add_two(int(message))
 
         flash('Successfully encrypted!')
 
-        #flash(message_transformed)
+        flash(message_transformed)
 
         return render_template('encrypt.html', form=form, message=message)
 
