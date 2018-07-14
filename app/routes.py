@@ -24,6 +24,9 @@ def admin():
 def encrypt():
     form = EncryptForm()
     if form.validate_on_submit():
+
+        emoji_list = list(emoji.EMOJI_UNICODE)
+        alphabet_lower = string.ascii_lowercase
         # Encryption should happen here:
         # message = emojify.encrypt(form.message.data)
         # with error handling & messages to user
