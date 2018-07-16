@@ -6,6 +6,10 @@ class EncryptForm(FlaskForm):
     message = StringField('Message', validators=[DataRequired()])
     submit = SubmitField('Encrypt Me!')
 
+class DecryptForm(FlaskForm):
+    message = StringField('Message', validators=[DataRequired()])
+    submit = SubmitField('Decrypt Me!')
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
