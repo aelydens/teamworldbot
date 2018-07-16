@@ -28,3 +28,20 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.cutie-pie {
+  padding: 30px;
+  border-radius: 50px;
+  width: 500px;
+  height: 200px;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  float: left;
+  background-color: #ffd220;
+}
+
+.cute-header {
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+}
