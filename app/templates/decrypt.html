@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Decrypt a Message!</h1>
+    <form action="/decrypt" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.message.label }}<br>
+            {{ form.message(size=32) }}
+            {% for error in form.message.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    {% if message %}
+      <div class="message">
+        Encrypted message: {{ message }}
+      </div>
+    {% endif %}
+
+{% endblock %}
