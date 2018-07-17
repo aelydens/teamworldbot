@@ -12,6 +12,8 @@ import emoji
 import string
 import argparse
 import sys
+import Emoji_class_commandline as emoji_class
+import emoji
 
 def parse_cmdline_params(arg_list = None):
     """Parses commandline arguments.
@@ -70,119 +72,9 @@ def parse_cmdline_params(arg_list = None):
 
     return opts
 
-
-class emoji_it:
-    def __init__(self):
-        self.alphabet_lower = string.ascii_lowercase
-        self.aphabet_upper = string.ascii_uppercase
-        self.numbers = [0,1,2,3,4,5,6,7,8,9]
-        self.emoji_list = list(emoji.EMOJI_UNICODE)
-        self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.iteritems()}
-        # default multiplier
-        self.multiplier = 1
-        # default key
-        self.emoji_key = ':rocket:'
-        
-
-
-    def define_cipher(self):
-        #define the alphabet to emoji symbols dictionary for caesar cipher
-        # multiplier allows for offseting alphabet, i.e. A=index 1, b=index 3, c = index 5, instead of ABC= index 1,2,3
-
-        cipher_dict = {}
-        start_alphabet = self.emoji_list.index(self.emoji_key)
-        
-        
-        count = 0
-        ## assign mapping for lower case
-        for letter in self.alphabet_lower:
-            emoji_index = ((start_alphabet + count) * int(self.multiplier)) % len(self.emoji_list)
-            emoji_mapping = self.emoji_list[emoji_index]
-
-            # check to see if emoji already exists in dictionary, if it does increment index by 1    
-            while emoji_mapping in cipher_dict.values():
-                emoji_index += 1
-                emoji_mapping = self.emoji_list[emoji_index]    
-            
-            cipher_dict[letter] = emoji_mapping
-            count += 1
-            
-        ## assign mapping for upper case    
-        for letter in self.aphabet_upper:
-            emoji_index = ((start_alphabet + count) * int(self.multiplier)) % len(self.emoji_list)
-            emoji_mapping = self.emoji_list[emoji_index]
-
-            # check to see if emoji already exists in dictionary, if it does increment index by 1    
-            while emoji_mapping in cipher_dict.values():
-                emoji_index += 1
-                emoji_mapping = self.emoji_list[emoji_index]    
-            
-            cipher_dict[letter] = emoji_mapping
-            count += 1   
-
-        ## assign mapping for numbers    
-        for number in self.numbers:
-            emoji_index = ((start_alphabet + count) * int(self.multiplier)) % len(self.emoji_list)
-            emoji_mapping = self.emoji_list[emoji_index]
-
-            # check to see if emoji already exists in dictionary, if it does increment index by 1    
-            while emoji_mapping in cipher_dict.values():
-                emoji_index += 1
-                emoji_mapping = self.emoji_list[emoji_index]    
-            
-            cipher_dict[str(number)] = emoji_mapping
-            count += 1  
-
-        return cipher_dict
-
-
-    def encrypt(self, message):
-        # Simple Ceasar Cypher, the emoji-key index position marks 'a',
-        # the rest of the alphabet is defined from starting index 'a'
-
-        
-        # Define the cipher dictionary, assign letter -> emoji
-        cipher = self.define_cipher()
-
-        encrypted_message=[]
-        for letter in message:
-            if letter in cipher:
-                encrypted_message.append(cipher[letter])
-            else:
-                encrypted_message.append(letter)
-
-        for emoj in encrypted_message:
-            print emoji.emojize(emoj),
-        print 
-
-
-    def decrypt(self, encrypted_message):
-        # Simple Ceasar Cypher, the emoji-key index position marks 'a', the rest of the alphabet is defined from starting index 'a'
-        # cipher dict is regenerated as in Encrpyt, but then key value pairs are reversed
-
-        cipher = self.define_cipher()
-        #reverse the cipher
-        rev_cipher = {v: k for k, v in cipher.iteritems()}
-        decrypted = []
-
-        for symbol in encrypted_message: 
-            '''  
-            CODY : forcing u'' to be a literal space.
-            '''
-            if symbol == u'':
-                symbol = ' '
-            if symbol in rev_cipher:
-                decrypted.append(rev_cipher[symbol])
-                
-            else:
-                decrypted.append(symbol)
-
-        print(''.join(decrypted))
-
-
 def main(argv):
-
-    translate = emoji_it()
+    # create object of class
+    translate = emoji_class.emoji_it()
 
     opts = parse_cmdline_params(sys.argv[1:])
     file_lines = []
@@ -200,9 +92,15 @@ def main(argv):
 
     # If encryption selected: do it    
     if opts.e:
+        encrypted =[]
         for input_line in file_lines:
-            translate.encrypt(input_line)
-          
+            encrypted.append(translate.encrypt(input_line))
+
+        for encrypted_line in encrypted:
+            #print ''.join(encrypted_line)
+            for emoj in encrypted_line:
+                print emoji.emojize(emoj),
+
     #If decryption selected: do it 
     if opts.d:
         for input_line in file_lines:
@@ -215,8 +113,8 @@ def main(argv):
                 else:
                  decode_message.append(code)
 
-            translate.decrypt(decode_message)
-       
-      
+            decrypted = translate.decrypt(decode_message)
+            print decrypted
+
 if __name__ == "__main__":
     main(argv)
