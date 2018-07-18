@@ -1,6 +1,6 @@
 __author__ = 'jcovino'
 # !/usr/bin/env python
-# Python 2.7
+# Python 3.6
 ''' Run on the command line. Text file input is required. Encryption is only supported for one-line, so no newlines
 encryption example: python Emoji_it_POC.py  -e 'test.txt'    (put text in file)
 decryption example: python Emoji_it_POC.py  -d -i test.txt   (put emojis in file)
@@ -99,8 +99,12 @@ def main(argv):
         for encrypted_line in encrypted:
             #print ''.join(encrypted_line)
             for emoj in encrypted_line:
-                print emoji.emojize(emoj),
-
+              # Python 2
+              print   emoji.emojize(emoj),
+            print 
+              # Python 3
+              #print (emoji.emojize(emoj), end=' ')
+            #print ()
     #If decryption selected: do it 
     if opts.d:
         for input_line in file_lines:

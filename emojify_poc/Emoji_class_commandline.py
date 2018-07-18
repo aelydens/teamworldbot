@@ -9,7 +9,11 @@ class emoji_it:
         self.aphabet_upper = string.ascii_uppercase
         self.numbers = [0,1,2,3,4,5,6,7,8,9]
         self.emoji_list = list(emoji.EMOJI_UNICODE)
+        # Python 2
         self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.iteritems()}
+        # Python 3
+        #self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.items()}
+
         # default multiplier
         self.multiplier = 1
         # default key
@@ -79,8 +83,6 @@ class emoji_it:
                 encrypted_message.append(letter)
 
         return encrypted_message
-        #for emoj in encrypted_message:
-            #print emoji.emojize(emoj),
 
     def decrypt(self, encrypted_message):
         # Simple Ceasar Cypher, the emoji-key index position marks 'a', the rest of the alphabet is defined from starting index 'a'
