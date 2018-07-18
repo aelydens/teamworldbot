@@ -12,7 +12,7 @@ import emoji
 import string
 import argparse
 import sys
-import Emoji_class_commandline as emoji_class
+import Emoji_class_helper as emoji_class
 import emoji
 
 def parse_cmdline_params(arg_list = None):
@@ -101,7 +101,7 @@ def main(argv):
             for emoj in encrypted_line:
               # Python 2
               print   emoji.emojize(emoj),
-            print 
+            print
               # Python 3
               #print (emoji.emojize(emoj), end=' ')
             #print ()
