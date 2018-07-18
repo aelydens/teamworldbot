@@ -72,17 +72,14 @@ class emoji_it:
 
         # Define the cipher dictionary, assign letter -> emoji
         cipher = self.define_cipher()
-
-        encrypted_message=[]
+        encrypted_message = ''
         for letter in message:
             if letter in cipher:
-                encrypted_message.append(cipher[letter])
+                encrypted_message += cipher[letter]
             else:
-                encrypted_message.append(letter)
+                encrypted_message += letter
 
-        for emoj in encrypted_message:
-            print(emoji.emojize(emoj)),
-        print
+        return encrypted_message
 
 
     def decrypt(self, encrypted_message):
@@ -91,19 +88,50 @@ class emoji_it:
 
         cipher = self.define_cipher()
         #reverse the cipher
-        rev_cipher = {v: k for k, v in cipher.iteritems()}
-        decrypted = []
+        rev_cipher = {v: k for k, v in cipher.items()}
+        decrypted = ''
+        i = 0
 
-        for symbol in encrypted_message:
-            '''
-            CODY : forcing u'' to be a literal space.
-            '''
-            if symbol == u'':
-                symbol = ' '
-            if symbol in rev_cipher:
-                decrypted.append(rev_cipher[symbol])
+        while i < len(encrypted_message):
 
+            current_emoji = ''
+            
+            
+            if encrypted_message[i] == ':': #start of a potential emoji
+
+                prev_i = i #saves i in case this isn't an actual emoji
+                current_emoji += encrypted_message[i]  #adds colon to current_emoji
+                i += 1 #increment i
+
+                if i == len(encrypted_message):
+                    decrypted += current_emoji
+                    
+                    return decrypted
+
+                while encrypted_message[i] != ':':
+                    current_emoji += encrypted_message[i]
+                    
+                    if (i+1) == len(encrypted_message):
+                        break
+                    else:
+                        i += 1
+
+                current_emoji += encrypted_message[i] # add last colon
+               
+
+                if current_emoji not in rev_cipher:
+                    #reset, this clearly isn't an emoji
+                    current_emoji = ''
+                    i = prev_i 
+                    
+
+            if len(current_emoji) > 1:
+                decrypted += rev_cipher[current_emoji]
             else:
-                decrypted.append(symbol)
+                decrypted += encrypted_message[i]
+            
+            i += 1
 
-        print(''.join(decrypted))
+
+        print(decrypted)
+        return decrypted
