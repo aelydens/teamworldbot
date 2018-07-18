@@ -1,5 +1,6 @@
 from app.emoji_class import emoji_it
 
+
 #simple sanity check
 def test_default_sanity():
     cipher = emoji_it()
@@ -10,7 +11,7 @@ def test_default_sanity():
 #Test that each character gets mapped to a different emoji.
 def test_cipher_duplicate():
     cipher = emoji_it()
-    cipher.multiplier = 2623
+    cipher.multiplier = 2623 #number of emojis
 
     #create cipher dictionary
     cipher_dict = cipher.define_cipher()
