@@ -26,14 +26,14 @@ def encrypt():
     form = EncryptForm()
     if form.validate_on_submit():
 
-        emoji_list = list(emoji.EMOJI_UNICODE)
-        alphabet_lower = string.ascii_lowercase
-        # Encryption should happen here:
-        # message = emojify.encrypt(form.message.data)
-        # with error handling & messages to user
+        #received message from form
         message = form.message.data
 
-        message = str(add_two(int(message)))
+        #instantiate class
+        emoji_encrypt_class = emoji_it()
+
+        #rewrite message with encrypted message
+        message = emoji_encrypt_class.encrypt(message)
 
         flash('Successfully encrypted!')
 
