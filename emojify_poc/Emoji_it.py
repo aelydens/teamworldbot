@@ -97,14 +97,10 @@ def main(argv):
             encrypted.append(translate.encrypt(input_line))
 
         for encrypted_line in encrypted:
-            #print ''.join(encrypted_line)
+            #print (''.join(encrypted_line))
             for emoj in encrypted_line:
-              # Python 2
-              print   emoji.emojize(emoj),
-            print
-              # Python 3
-              #print (emoji.emojize(emoj), end=' ')
-            #print ()
+                print (emoj, emoji.emojize(emoj))
+            print ()
     #If decryption selected: do it 
     if opts.d:
         for input_line in file_lines:
@@ -118,7 +114,7 @@ def main(argv):
                  decode_message.append(code)
 
             decrypted = translate.decrypt(decode_message)
-            print decrypted
+            print (decrypted)
 
 if __name__ == "__main__":
     main(argv)
