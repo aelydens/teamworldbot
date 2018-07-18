@@ -21,75 +21,79 @@ Expected result
     User will be logged in and taken to separate html page.
 
 Actual result
-    TBD
+    No functionality yet, reports back with Internal Server Error
 
 Status (Pass/Fail)
-    Pass
+    Fail
 
 Notes
-    N/A
+    Back-end database needs to be worked on and implemented correctly.
 
 Post-conditions
-    TBD
+    User is given Internal Server Error.
 
 #####################################################################
-## TEST 2 - TBD ##
+## TEST 2 - Encrypt ##
 #####################################################################
 
 Use case name
-    TBD
+    Encrypt a message via deployed app.
 
 Description
-    TBD
+    Be able to encrypt a message through our website. User will have the option for multiplier and key to better encrypt their message.
 
 Pre-conditions
-    TBD
+    User uses valid ASCII digits / letters. Any other character is ignored for encryption purposes.
 
 Test steps
-    TBD
+    1. Enter message to encrypt in form field.
+    2. Press "Encrypt Me!" button.
+    3. Receive encrypted message.
 
 Expected result
-    TBD
+    Any valid characters will be encrypted. Other non-valid characters will be concatenated with string but not encrypted.
 
 Actual result
-    TBD
+    Same as expected result.
 
 Status (Pass/Fail)
-    Pass
+    Pass (kinda)
 
 Notes
-    N/A
+    Multiplier / key fields have not been implemented yet, but actual encryption works.
 
 Post-conditions
-    TBD
+    Current html is altered to show user encrypted message.
 
 #####################################################################
-## TEST 3 - TBD ##
+## TEST 3 - Decrypt ##
 #####################################################################
 
 Use case name
-    TBD
+    Decrypt a message via deployed app.
 
 Description
-    TBD
+    Be able to decrypt a message through our website. User will have the option for multiplier and key to match the cipher provided from encryption.
 
 Pre-conditions
-    TBD
+    User uses valid ASCII digits / letters. Any other character is ignored for encryption purposes.
 
 Test steps
-    TBD
+    1. Enter message to decrypt in form field.
+    2. Press "Decrypt Me!" button.
+    3. Receive decrypted message.
 
 Expected result
-    TBD
+    Any emoji's will be decrypted. Other non-valid characters will remain the same in output.
 
 Actual result
-    TBD
+    Internal Server Error
 
 Status (Pass/Fail)
     Pass
 
 Notes
-    N/A
+    Need to work around routes.py to get decrypt.html up and running.
 
 Post-conditions
-    TBD
+    Internal Server Error
