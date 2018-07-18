@@ -10,10 +10,9 @@ class emoji_it:
         self.numbers = [0,1,2,3,4,5,6,7,8,9]
         self.emoji_list = list(emoji.EMOJI_UNICODE)
         # Python 2
-        self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.iteritems()}
+        #self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.iteritems()}
         # Python 3
-        #self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.items()}
-
+        self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.items()}
         # default multiplier
         self.multiplier = 1
         # default key
@@ -36,7 +35,6 @@ class emoji_it:
             while emoji_mapping in cipher_dict.values():
                 emoji_index += 1
                 emoji_mapping = self.emoji_list[emoji_index]
-
             cipher_dict[letter] = emoji_mapping
             count += 1
 
@@ -66,15 +64,15 @@ class emoji_it:
             cipher_dict[str(number)] = emoji_mapping
             count += 1
 
+        print (cipher_dict)
         return cipher_dict
 
     def encrypt(self, message):
         # Simple Ceasar Cypher, the emoji-key index position marks 'a',
         # the rest of the alphabet is defined from starting index 'a'
-
         # Define the cipher dictionary, assign letter -> emoji
-        cipher = self.define_cipher()
 
+        cipher = self.define_cipher()
         encrypted_message=[]
         for letter in message:
             if letter in cipher:
@@ -90,16 +88,16 @@ class emoji_it:
 
         cipher = self.define_cipher()
         #reverse the cipher
-        rev_cipher = {v: k for k, v in cipher.iteritems()}
+        # rev_cipher = {v: k for k, v in cipher.iteritems()}
+        # Python 3
+        rev_cipher= {v: k for k, v in cipher.iteritems()}
         decrypted = []
 
         for symbol in encrypted_message:
-
             if symbol == u'':
                 symbol = ' '
             if symbol in rev_cipher:
                 decrypted.append(rev_cipher[symbol])
-
             else:
                 decrypted.append(symbol)
 
