@@ -105,7 +105,6 @@ class emoji_it:
 
                 if i == len(encrypted_message):
                     decrypted += current_emoji
-                    
                     return decrypted
 
                 while encrypted_message[i] != ':':
@@ -133,5 +132,4 @@ class emoji_it:
             i += 1
 
 
-        print(decrypted)
         return decrypted
