@@ -72,14 +72,14 @@ class emoji_it:
 
         # Define the cipher dictionary, assign letter -> emoji
         cipher = self.define_cipher()
-        encrypted_message = ''
+        encrypted_message = ""
         for letter in message:
             if letter in cipher:
                 encrypted_message += cipher[letter]
             else:
                 encrypted_message += letter
 
-        return encrypted_message
+        return emoji.emojize(encrypted_message)
 
 
     def decrypt(self, encrypted_message):
@@ -89,6 +89,7 @@ class emoji_it:
         cipher = self.define_cipher()
         #reverse the cipher
         rev_cipher = {v: k for k, v in cipher.items()}
+        encrypted_message = emoji.demojize(encrypted_message)
         decrypted = ''
         i = 0
 
