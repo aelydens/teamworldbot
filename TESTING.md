@@ -1,4 +1,20 @@
 #####################################################################
+## Automated testing setup guide ##
+#####################################################################
+
+1. Clone or download repository.
+
+2. Install pytest, 'pip3 install pytest'
+
+3. Go to project folder "teamworldbot/"
+
+4. While in project directory, run tests with 'python3 -m pytest'
+
+5. If you want to modify tests go to directory "teamworldbot/tests/", 
+    Python file names and functions must start with "test_"
+
+
+#####################################################################
 ## TEST 1 - LOGIN ##
 #####################################################################
 
