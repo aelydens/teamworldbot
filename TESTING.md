@@ -106,7 +106,7 @@ Actual result
     Internal Server Error
 
 Status (Pass/Fail)
-    Pass
+    Fail
 
 Notes
     Need to work around routes.py to get decrypt.html up and running.
