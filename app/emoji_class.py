@@ -8,12 +8,12 @@ class emoji_it:
         self.aphabet_upper = string.ascii_uppercase
         self.numbers = [0,1,2,3,4,5,6,7,8,9]
         self.emoji_list = list(emoji.EMOJI_UNICODE)
-        self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.iteritems()}
+        self.unicode_emoji = {v: k for k, v in iter(emoji.EMOJI_UNICODE.items())}
         # default multiplier
         self.multiplier = 1
         # default key
         self.emoji_key = ':rocket:'
-        
+
 
 
     def define_cipher(self):
@@ -22,47 +22,46 @@ class emoji_it:
 
         cipher_dict = {}
         start_alphabet = self.emoji_list.index(self.emoji_key)
-        
-        
+
         count = 0
         ## assign mapping for lower case
         for letter in self.alphabet_lower:
             emoji_index = ((start_alphabet + count) * int(self.multiplier)) % len(self.emoji_list)
             emoji_mapping = self.emoji_list[emoji_index]
 
-            # check to see if emoji already exists in dictionary, if it does increment index by 1    
+            # check to see if emoji already exists in dictionary, if it does increment index by 1
             while emoji_mapping in cipher_dict.values():
                 emoji_index += 1
-                emoji_mapping = self.emoji_list[emoji_index]    
-            
+                emoji_mapping = self.emoji_list[emoji_index]
+
             cipher_dict[letter] = emoji_mapping
             count += 1
-            
-        ## assign mapping for upper case    
+
+        ## assign mapping for upper case
         for letter in self.aphabet_upper:
             emoji_index = ((start_alphabet + count) * int(self.multiplier)) % len(self.emoji_list)
             emoji_mapping = self.emoji_list[emoji_index]
 
-            # check to see if emoji already exists in dictionary, if it does increment index by 1    
+            # check to see if emoji already exists in dictionary, if it does increment index by 1
             while emoji_mapping in cipher_dict.values():
                 emoji_index += 1
-                emoji_mapping = self.emoji_list[emoji_index]    
-            
-            cipher_dict[letter] = emoji_mapping
-            count += 1   
+                emoji_mapping = self.emoji_list[emoji_index]
 
-        ## assign mapping for numbers    
+            cipher_dict[letter] = emoji_mapping
+            count += 1
+
+        ## assign mapping for numbers
         for number in self.numbers:
             emoji_index = ((start_alphabet + count) * int(self.multiplier)) % len(self.emoji_list)
             emoji_mapping = self.emoji_list[emoji_index]
 
-            # check to see if emoji already exists in dictionary, if it does increment index by 1    
+            # check to see if emoji already exists in dictionary, if it does increment index by 1
             while emoji_mapping in cipher_dict.values():
                 emoji_index += 1
-                emoji_mapping = self.emoji_list[emoji_index]    
-            
+                emoji_mapping = self.emoji_list[emoji_index]
+
             cipher_dict[str(number)] = emoji_mapping
-            count += 1  
+            count += 1
 
         return cipher_dict
 
@@ -71,7 +70,6 @@ class emoji_it:
         # Simple Ceasar Cypher, the emoji-key index position marks 'a',
         # the rest of the alphabet is defined from starting index 'a'
 
-        
         # Define the cipher dictionary, assign letter -> emoji
         cipher = self.define_cipher()
 
@@ -83,8 +81,8 @@ class emoji_it:
                 encrypted_message.append(letter)
 
         for emoj in encrypted_message:
-            print emoji.emojize(emoj),
-        print 
+            print(emoji.emojize(emoj)),
+        print
 
 
     def decrypt(self, encrypted_message):
@@ -96,15 +94,15 @@ class emoji_it:
         rev_cipher = {v: k for k, v in cipher.iteritems()}
         decrypted = []
 
-        for symbol in encrypted_message: 
-            '''  
+        for symbol in encrypted_message:
+            '''
             CODY : forcing u'' to be a literal space.
             '''
             if symbol == u'':
                 symbol = ' '
             if symbol in rev_cipher:
                 decrypted.append(rev_cipher[symbol])
-                
+
             else:
                 decrypted.append(symbol)
 
