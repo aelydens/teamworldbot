@@ -43,21 +43,21 @@ def encrypt():
 
 @app.route('/decrypt', methods=['GET', 'POST'])
 def decrypt():
-    form = DecryptForm()
+    form2 = DecryptForm()
     if form.validate_on_submit():
 
         # Encryption should happen here:
         # message = emojify.encrypt(form.message.data)
         # with error handling & messages to user
-        message = form.message.data
+        message2 = form2.message.data
 
-        message = str(add_two(int(message)))
+        message2 = str(add_two(int(message2)))
 
         flash('Successfully encrypted!')
 
-        return render_template('decrypt.html', form=form, message=message)
+        return render_template('decrypt.html', form=form2, message=message2)
 
-    return render_template('decrypt.html', form=form)
+    return render_template('decrypt.html', form=form2)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
