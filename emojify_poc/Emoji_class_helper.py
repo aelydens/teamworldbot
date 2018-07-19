@@ -12,6 +12,7 @@ class emoji_it:
         self.aphabet_upper = string.ascii_uppercase
         self.numbers = [0,1,2,3,4,5,6,7,8,9]
         self.emoji_list = list(emoji.EMOJI_UNICODE)
+        print (self.emoji_list)
         self.unicode_emoji = {v: k for k, v in iter(emoji.EMOJI_UNICODE.items())}
 
         self.cipher = None 
@@ -90,14 +91,14 @@ class emoji_it:
         if self.cipher == None:
             self.cipher = self.define_cipher()
         #reverse the cipher
-        # rev_cipher = {v: k for k, v in cipher.iteritems()}
-        # Python 3
+        print (self.cipher)
         rev_cipher= {v: k for k, v in self.cipher.items()}
         decrypted = []
 
         for symbol in encrypted_message:
-            if symbol == u'':
-                symbol = ' '
+            symbol = emoji.demojize(symbol)
+            #if symbol == u'':
+             #   symbol = ' '
             if symbol in rev_cipher:
                 decrypted.append(rev_cipher[symbol])
             else:

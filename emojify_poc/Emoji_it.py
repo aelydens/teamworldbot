@@ -111,7 +111,7 @@ def main(argv):
         for input_line in file_lines:
             #unicode_it = unicode(input_line, 'utf-8')
             #unicode_it = unicode(input_line, 'utf-8')
-            unicode_it = str(input_line)
+            #unicode_it = str(input_line)
             #print (unicode_it)
             escaped_unicode_list = unicode_it.split()
             decode_message=[]
