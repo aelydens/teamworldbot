@@ -97,7 +97,6 @@ class emoji_it:
 
             current_emoji = ''
             
-            
             if encrypted_message[i] == ':': #start of a potential emoji
 
                 prev_i = i #saves i in case this isn't an actual emoji

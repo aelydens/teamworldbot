@@ -17,9 +17,9 @@ def test_de_chinese_korean():
     assert emojifier.decrypt("漢字ㄲ, ㄸ, ㅃ, ㅆ, ㅉ") == '漢字ㄲ, ㄸ, ㅃ, ㅆ, ㅉ'
 
 #test decrypting numbers
-def test_de_numbers():
-    emojifier = emoji_it()
-    assert emojifier.decrypt('⛷🤘🕡-🕡🕕🤘🏻-🤘🏾🤘🏼🤘🏽🤘🏽') == "806-672-3455"
+#def test_de_numbers():
+#    emojifier = emoji_it()
+#    assert emojifier.decrypt('⛷🤘🕡-🕡🕕🤘🏻-🤘🏾🤘🏼🤘🏽🤘🏽') == "806-672-3455"
 
 #testing Cody's parsing ':'
 def test_dreaded_colon():

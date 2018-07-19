@@ -11,9 +11,12 @@ class emoji_it:
         self.alphabet_lower = string.ascii_lowercase
         self.aphabet_upper = string.ascii_uppercase
         self.numbers = [0,1,2,3,4,5,6,7,8,9]
-        self.emoji_list = list(emoji.EMOJI_UNICODE)
-        print (self.emoji_list)
-        self.unicode_emoji = {v: k for k, v in iter(emoji.EMOJI_UNICODE.items())}
+        self.unicode_emoji = {}
+        for key in emoji.EMOJI_UNICODE:
+            val = emoji.EMOJI_UNICODE[key]
+            if len(emoji.EMOJI_UNICODE[key]) == 1:
+                self.unicode_emoji[key] = val
+        self.emoji_list = list(self.unicode_emoji)
 
         self.cipher = None 
         # default multiplier
@@ -97,8 +100,7 @@ class emoji_it:
 
         for symbol in encrypted_message:
             symbol = emoji.demojize(symbol)
-            #if symbol == u'':
-             #   symbol = ' '
+
             if symbol in rev_cipher:
                 decrypted.append(rev_cipher[symbol])
             else:
