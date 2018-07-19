@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for
 from app import app
-from app.forms import EncryptForm, LoginForm
+from app.forms import EncryptForm, DecryptForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
@@ -43,11 +43,21 @@ def encrypt():
 
 @app.route('/decrypt', methods=['GET', 'POST'])
 def decrypt():
-    form2 = DecryptForm()
+    form = DecryptForm()
     if form.validate_on_submit():
-        return render_template('decrypt.html', form=form2)
-        
-    return render_template('decrypt.html', form=form2)
+        #received message from form
+        message = form.message.data
+
+        #instantiate class
+        emoji_encrypt_class = emoji_it()
+
+        #rewrite message with encrypted message
+        message = emoji_encrypt_class.decrypt(message)
+
+        flash('Successfully decrypted!')
+        return render_template('decrypt.html', form=form, message=message)
+
+    return render_template('decrypt.html', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
