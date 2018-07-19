@@ -1,6 +1,10 @@
+# !/usr/local/bin/env python3
+
 __author__ = 'jcovino'
-# !/usr/bin/env python
-# Python 3.6
+
+
+
+
 ''' Run on the command line. Text file input is required. Encryption is only supported for one-line, so no newlines
 encryption example: python Emoji_it_POC.py  -e 'test.txt'    (put text in file)
 decryption example: python Emoji_it_POC.py  -d -i test.txt   (put emojis in file)
@@ -9,11 +13,10 @@ encryption key and multiplier'''
 
 from sys import argv
 import emoji
-import string
 import argparse
 import sys
 import Emoji_class_helper as emoji_class
-import emoji
+
 
 def parse_cmdline_params(arg_list = None):
     """Parses commandline arguments.
@@ -99,13 +102,18 @@ def main(argv):
         for encrypted_line in encrypted:
             #print (''.join(encrypted_line))
             for emoj in encrypted_line:
-                print (emoj, emoji.emojize(emoj))
+                print (emoj)
+                print (emoji.emojize(emoj))
             print ()
+
     #If decryption selected: do it 
     if opts.d:
         for input_line in file_lines:
-            unicode_it = unicode(input_line, 'utf-8')
-            escaped_unicode_list = unicode_it.split(' ')
+            #unicode_it = unicode(input_line, 'utf-8')
+            #unicode_it = unicode(input_line, 'utf-8')
+            unicode_it = str(input_line)
+            #print (unicode_it)
+            escaped_unicode_list = unicode_it.split()
             decode_message=[]
             for code in escaped_unicode_list:
                 if code in translate.unicode_emoji:

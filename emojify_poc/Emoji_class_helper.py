@@ -1,4 +1,7 @@
+# !/usr/local/bin/env python3
+# -*- coding: UTF-8 -*-
 __author__ = 'jcovino'
+
 import emoji
 import string
 
@@ -9,10 +12,9 @@ class emoji_it:
         self.aphabet_upper = string.ascii_uppercase
         self.numbers = [0,1,2,3,4,5,6,7,8,9]
         self.emoji_list = list(emoji.EMOJI_UNICODE)
-        # Python 2
-        #self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.iteritems()}
-        # Python 3
-        self.unicode_emoji = {v: k for k, v in emoji.EMOJI_UNICODE.items()}
+        self.unicode_emoji = {v: k for k, v in iter(emoji.EMOJI_UNICODE.items())}
+
+        self.cipher = None 
         # default multiplier
         self.multiplier = 1
         # default key
@@ -64,7 +66,6 @@ class emoji_it:
             cipher_dict[str(number)] = emoji_mapping
             count += 1
 
-        print (cipher_dict)
         return cipher_dict
 
     def encrypt(self, message):
@@ -72,11 +73,12 @@ class emoji_it:
         # the rest of the alphabet is defined from starting index 'a'
         # Define the cipher dictionary, assign letter -> emoji
 
-        cipher = self.define_cipher()
+        if self.cipher == None:
+            self.cipher = self.define_cipher()
         encrypted_message=[]
         for letter in message:
-            if letter in cipher:
-                encrypted_message.append(cipher[letter])
+            if letter in self.cipher:
+                encrypted_message.append(self.cipher[letter])
             else:
                 encrypted_message.append(letter)
 
@@ -85,12 +87,12 @@ class emoji_it:
     def decrypt(self, encrypted_message):
         # Simple Ceasar Cypher, the emoji-key index position marks 'a', the rest of the alphabet is defined from starting index 'a'
         # cipher dict is regenerated as in Encrpyt, but then key value pairs are reversed
-
-        cipher = self.define_cipher()
+        if self.cipher == None:
+            self.cipher = self.define_cipher()
         #reverse the cipher
         # rev_cipher = {v: k for k, v in cipher.iteritems()}
         # Python 3
-        rev_cipher= {v: k for k, v in cipher.iteritems()}
+        rev_cipher= {v: k for k, v in self.cipher.items()}
         decrypted = []
 
         for symbol in encrypted_message:
