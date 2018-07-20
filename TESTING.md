@@ -41,7 +41,7 @@ In development:
   - User is logged in and taken to separate html page.
 
 On production:
-  - Results in an Internal Server Error. We need to migrate over to Postgres, as [Heroku does not support SQLite](https://devcenter.heroku.com/articles/sqlite3]).
+  - Results in an Internal Server Error. We need to migrate over to Postgres, as [Heroku does not support SQLite](https://devcenter.heroku.com/articles/sqlite3).
 
 ##### Status (Pass/Fail)
 Fail
