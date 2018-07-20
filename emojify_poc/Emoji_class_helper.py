@@ -5,20 +5,21 @@ __author__ = 'jcovino'
 import emoji
 import string
 
-
 class emoji_it:
     def __init__(self):
         self.alphabet_lower = string.ascii_lowercase
         self.aphabet_upper = string.ascii_uppercase
-        self.numbers = [0,1,2,3,4,5,6,7,8,9]
-        self.unicode_emoji = {}
+        self.numbers = list(range(0, 10, 1))
+
+        self.unicode_emoji = {}  #******
+
         for key in emoji.EMOJI_UNICODE:
             val = emoji.EMOJI_UNICODE[key]
             if len(emoji.EMOJI_UNICODE[key]) == 1:
                 self.unicode_emoji[key] = val
-        self.emoji_list = list(self.unicode_emoji)
 
-        self.cipher = None 
+        self.emoji_list = list(self.unicode_emoji)
+        self.cipher = None
         # default multiplier
         self.multiplier = 1
         # default key
@@ -79,6 +80,7 @@ class emoji_it:
 
         if self.cipher == None:
             self.cipher = self.define_cipher()
+
         encrypted_message=[]
         for letter in message:
             if letter in self.cipher:
@@ -91,11 +93,13 @@ class emoji_it:
     def decrypt(self, encrypted_message):
         # Simple Ceasar Cypher, the emoji-key index position marks 'a', the rest of the alphabet is defined from starting index 'a'
         # cipher dict is regenerated as in Encrpyt, but then key value pairs are reversed
+
         if self.cipher == None:
             self.cipher = self.define_cipher()
+
         #reverse the cipher
-        print (self.cipher)
         rev_cipher= {v: k for k, v in self.cipher.items()}
+
         decrypted = []
 
         for symbol in encrypted_message:
