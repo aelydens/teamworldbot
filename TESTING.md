@@ -1,3 +1,5 @@
+EmojiCryptor
+James Covino, Cody Hegwer, Annie Lydens
 #####################################################################
 ## Automated testing setup guide ##
 #####################################################################
@@ -106,10 +108,12 @@ Actual result
     Internal Server Error
 
 Status (Pass/Fail)
-    Fail
+    Pass (kinda)
 
 Notes
-    Need to work around routes.py to get decrypt.html up and running.
+   Multiplier / key fields have not been implemented yet, but actual Decryption works.
+   Copying Emoji's from slack into Decryption App isn't working. Instead of the Emoji being pasted into the input bar
+   :smile: :rocket: ... is pasted in.  As, a result no decryption occurs and the same message is relayed back.
 
 Post-conditions
-    Internal Server Error
+    Current html is altered to show user Decrypted message.
