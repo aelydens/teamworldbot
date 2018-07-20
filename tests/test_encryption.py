@@ -19,3 +19,15 @@ def test_chinese_korean():
 def test_numbers():
     emojifier = emoji_it()
     assert emojifier.encrypt("806-672-3455") == '🛩💀🙂-🙂🎰🛷-😴😪🙁🙁'
+
+#testing empty input
+def test_empty_input():
+    emojifier = emoji_it()
+    assert emojifier.encrypt('') == ''
+
+#testing multiline input
+def test_multiline_input():
+    emojifier = emoji_it()
+    input = "You work that you may keep pace\nwith the earth\nand the soul of the earth."
+    expected_output = "⛷🥪🏫 ✂🥪🦕👟 🧣📍🚀🧣 📜🥪🏫 ⛵🚀📜 👟🐓🐓🛰 🛰🚀🎢🐓\n✂🏉🧣📍 🧣📍🐓 🐓🚀🦕🧣📍\n🚀🍶🤣 🧣📍🐓 🎷🥪🏫😥 🥪🌹 🧣📍🐓 🐓🚀🦕🧣📍."
+    assert emojifier.encrypt(input) == expected_output

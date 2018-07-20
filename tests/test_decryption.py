@@ -23,3 +23,14 @@ def test_de_numbers():
 def test_dreaded_colon():
     emojifier = emoji_it()
     assert emojifier.decrypt(':hey::') == ":hey::"
+
+#testing empty input
+def test_empty_input():
+    emojifier = emoji_it()
+    assert emojifier.decrypt('') == ''
+
+#testing multiline input
+def test_multiline_input():
+    emojifier = emoji_it()
+    expected = "And if you sing\nthough as angels"
+    assert emojifier.decrypt('🙈🍶🤣 🏉🌹 📜🥪🏫 🎷🏉🍶🏵\n🧣📍🥪🏫🏵📍 🚀🎷 🚀🍶🏵🐓😥🎷') == expected
