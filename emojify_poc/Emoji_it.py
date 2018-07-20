@@ -100,9 +100,8 @@ def main(argv):
             encrypted.append(translate.encrypt(input_line))
 
         for encrypted_line in encrypted:
-            for emoj in encrypted_line:
-                print (emoji.emojize(emoj), end ='')
-            print ()
+                print (encrypted_line, end ='')
+                print ()
 
     #If decryption selected: do it 
     if opts.d:

@@ -1,6 +1,5 @@
 from app.emoji_class import emoji_it
 
-
 def test_decryption_1():
     emojifier = emoji_it()
     assert emojifier.decrypt('📍🐓😥😥🥪') == 'hello'
@@ -18,7 +17,7 @@ def test_de_chinese_korean():
 #test decrypting numbers
 def test_de_numbers():
     emojifier = emoji_it()
-    assert emojifier.decrypt('⛷🤘🕡-🕡🕕🤘🏻-🤘🏾🤘🏼🤘🏽🤘🏽') == "806-672-3455"
+    assert emojifier.decrypt('🛩💀🙂-🙂🎰🛷-😴😪🙁🙁') == "806-672-3455"
 
 #testing Cody's parsing ':'
 def test_dreaded_colon():

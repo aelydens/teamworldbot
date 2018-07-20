@@ -18,4 +18,4 @@ def test_chinese_korean():
 #test encrypting numbers
 def test_numbers():
     emojifier = emoji_it()
-    assert emojifier.encrypt("806-672-3455") == '⛷🤘🕡-🕡🕕🤘🏻-🤘🏾🤘🏼🤘🏽🤘🏽'
+    assert emojifier.encrypt("806-672-3455") == '🛩💀🙂-🙂🎰🛷-😴😪🙁🙁'

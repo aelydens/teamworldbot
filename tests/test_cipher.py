@@ -11,7 +11,7 @@ def test_default_sanity():
 #Test that each character gets mapped to a different emoji.
 def test_cipher_duplicate():
     cipher = emoji_it()
-    cipher.multiplier = 2623 #number of emojis
+    cipher.multiplier = 26 
 
     #create cipher dictionary
     cipher_dict = cipher.define_cipher()

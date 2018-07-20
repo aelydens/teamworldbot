@@ -77,22 +77,25 @@ class emoji_it:
         # Simple Ceasar Cypher, the emoji-key index position marks 'a',
         # the rest of the alphabet is defined from starting index 'a'
         # Define the cipher dictionary, assign letter -> emoji
+        # returns encyrpted message in Emoji
 
         if self.cipher == None:
             self.cipher = self.define_cipher()
 
-        encrypted_message=[]
+        encrypted_message = ""
         for letter in message:
             if letter in self.cipher:
-                encrypted_message.append(self.cipher[letter])
+                encrypted_message += self.cipher[letter]
             else:
-                encrypted_message.append(letter)
+                encrypted_message += letter
 
-        return encrypted_message
+        return emoji.emojize(encrypted_message)
+
 
     def decrypt(self, encrypted_message):
         # Simple Ceasar Cypher, the emoji-key index position marks 'a', the rest of the alphabet is defined from starting index 'a'
         # cipher dict is regenerated as in Encrpyt, but then key value pairs are reversed
+        # returns decrypted message in text
 
         if self.cipher == None:
             self.cipher = self.define_cipher()
