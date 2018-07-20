@@ -12,7 +12,7 @@ James Covino, Cody Hegwer, Annie Lydens
 
 4. While in project directory, run tests with 'python3 -m pytest'
 
-5. If you want to modify tests go to directory "teamworldbot/tests/", 
+5. If you want to modify tests go to directory "teamworldbot/tests/",
     Python file names and functions must start with "test_"
 
 
@@ -39,13 +39,17 @@ Expected result
     User will be logged in and taken to separate html page.
 
 Actual result
-    No functionality yet, reports back with Internal Server Error
+    In development:
+      - User is logged in and taken to separate html page.
+
+    On production:
+      - Results in an Internal Server Error. We need to migrate over to Postgres, as [Heroku does not support SQLite](https://devcenter.heroku.com/articles/sqlite3]).
 
 Status (Pass/Fail)
     Fail
 
 Notes
-    Back-end database needs to be worked on and implemented correctly.
+    We need to use Postgres instead of SQLite.
 
 Post-conditions
     User is given Internal Server Error.
@@ -105,7 +109,7 @@ Expected result
     Any emoji's will be decrypted. Other non-valid characters will remain the same in output.
 
 Actual result
-    Internal Server Error
+    Emojis are decrypted. Non-emojis remain the same in output.
 
 Status (Pass/Fail)
     Pass (kinda)
