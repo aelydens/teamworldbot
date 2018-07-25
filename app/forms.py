@@ -1,13 +1,13 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField
+from wtforms import StringField, SubmitField, PasswordField, TextAreaField
 from wtforms.validators import DataRequired
 
 class EncryptForm(FlaskForm):
-    message = StringField('Message', validators=[DataRequired()])
+    message = TextAreaField('Message', validators=[DataRequired()])
     submit = SubmitField('Encrypt Me!')
 
 class DecryptForm(FlaskForm):
-    message = StringField('Message', validators=[DataRequired()])
+    message = TextAreaField('Message', validators=[DataRequired()])
     submit = SubmitField('Decrypt Me!')
 
 class LoginForm(FlaskForm):
