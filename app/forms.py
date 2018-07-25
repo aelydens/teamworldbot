@@ -1,12 +1,12 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, TextAreaField, SelectField
+from wtforms import StringField, SubmitField, PasswordField, TextAreaField, IntegerField, SelectField
 from wtforms.validators import DataRequired
 
 
 class EncryptForm(FlaskForm):
     message = TextAreaField('Message', validators=[DataRequired()])
-    multiplier = StringField('Multiplier')
-    key = SelectField(label='Key', choices=[('rocket',':rocket:'), ('sandwich',':sandwich:')])
+    multiplier = IntegerField('Multiplier')
+    key = SelectField(label='Key', choices=[(':rocket:','Rocket'), (':sandwich:','Sandwich')])
     submit = SubmitField('Encrypt Me!')
 
 class DecryptForm(FlaskForm):
