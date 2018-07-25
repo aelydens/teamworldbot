@@ -1,14 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="cutie-pie">
-  <h2 class="cute-header">Encrypt your messages here!</h2>
-  <p class="lead">encrypt messages with emoji's to send to others</p>
-  <a class="btn btn-primary btn-lg" href="{{ url_for('encrypt') }}" role="button">Encrypt a message!</a>
+<div id="banner">
+  <img src="https://i.imgur.com/94uWTeU.png" class="imagelogo">
 </div>
-<div class="cutie-pie">
-  <h2 class="cute-header">Decrypt your messages here!</h2>
-  <p class="lead">decrypt messages you have recieved</p>
-  <a class="btn btn-primary btn-lg" href="{{ url_for('decrypt') }}" role="button">Decrypt a message!</a>
+<div class="row cutie-pie-row">
+  <div class="col-md-4">
+    <div class="card cutie-pie">
+      <div class="card-body">
+        <h5 class="card-title">Encrypt your messages here!</h5>
+        <p class="card-text">encrypt messages with emoji's to send to others</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('encrypt') }}" role="button">Encrypt a message!</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card cutie-pie">
+      <div class="card-body">
+        <h5 class="card-title">Decrypt your messages here!</h5>
+        <p class="card-text">decrypt messages you have received</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('decrypt') }}" role="button">Decrypt a message!</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card cutie-pie">
+      <div class="card-body">
+        <h5 class="card-title">Play a game!</h5>
+        <p class="card-text">solve an emoji encryption puzzle</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Solve a puzzle!</a>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
