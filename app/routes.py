@@ -32,13 +32,13 @@ def encrypt():
         multiplier = form.multiplier.data
         # choice = form.key.data
         # options = {u'U+1F680' : ':rocket:', u'U+1F4DC' : ':scroll:')}
-        # key = options[choice]
+        key = form.key.data
 
         #instantiate class
         emoji_encrypt_class = emoji_it()
 
         #rewrite message with encrypted message
-        # emoji_encrypt_class.emoji_key = key
+        emoji_encrypt_class.emoji_key = key
         emoji_encrypt_class.multiplier = multiplier
         message = emoji_encrypt_class.encrypt(message)
 
@@ -58,13 +58,13 @@ def decrypt():
         multiplier = form.multiplier.data
         # choice = form.key.data
         # options = {u'U+1F680' : ':rocket:', u'U+1F4DC' : ':scroll:')}
-        # key = options[choice]
+        key = form.key.data
 
         #instantiate class
         emoji_encrypt_class = emoji_it()
 
         #rewrite message with encrypted message
-        # emoji_encrypt_class.emoji_key = key
+        emoji_encrypt_class.emoji_key = key
         emoji_encrypt_class.multiplier = multiplier
         message = emoji_encrypt_class.decrypt(message)
 
