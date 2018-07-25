@@ -11,6 +11,8 @@ class EncryptForm(FlaskForm):
 
 class DecryptForm(FlaskForm):
     message = TextAreaField('Message', validators=[DataRequired()])
+    multiplier = IntegerField('Multiplier')
+    key = SelectField(label='Key', choices=[(':rocket:','Rocket'), (':sandwich:','Sandwich')])
     submit = SubmitField('Decrypt Me!')
 
 class LoginForm(FlaskForm):
