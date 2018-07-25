@@ -5,13 +5,13 @@ from wtforms.validators import DataRequired
 
 class EncryptForm(FlaskForm):
     message = TextAreaField('Message', validators=[DataRequired()])
-    multiplier = IntegerField('Multiplier')
+    multiplier = IntegerField('Multiplier', default=1)
     key = SelectField(label='Key', choices=[(':rocket:','🚀'), (':scroll:','📜')])
     submit = SubmitField('Encrypt Me!')
 
 class DecryptForm(FlaskForm):
     message = TextAreaField('Message', validators=[DataRequired()])
-    multiplier = IntegerField('Multiplier')
+    multiplier = IntegerField('Multiplier', default=1)
     key = SelectField(label='Key', choices=[(':rocket:','🚀'), (':scroll:','📜')])
     submit = SubmitField('Decrypt Me!')
 
