@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="row cutie-pie-row">
-    <div class="col-md-12">
+  <div class="row padding-top">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
       <h1>Encrypt a Message!</h1>
       <form action="/encrypt" class="form" method="post" novalidate>
         {{ form.hidden_tag() }}
