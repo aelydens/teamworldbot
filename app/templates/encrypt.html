@@ -1,23 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Encrypt a Message!</h1>
-    <form action="/encrypt" method="post" novalidate>
+  <div class="row cutie-pie-row">
+    <div class="col-md-12">
+      <h1>Encrypt a Message!</h1>
+      <form action="/encrypt" class="form" method="post" novalidate>
         {{ form.hidden_tag() }}
-        <p>
-            {{ form.message.label }}<br>
-            {{ form.message(size=32) }}
-            {% for error in form.message.errors %}
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
+        <div class="form-group">
+          {{ form.message.label }}<br>
+          {{ form.message(size=55, class_="form-control", rows="4") }}
+          {% for error in form.message.errors %}
+          <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div>{{ form.submit(class_="btn btn-primary") }}</div>
+      </form>
 
-    {% if message %}
-      <div class="message">
-        Encrypted message: {{ message }}
-      </div>
-    {% endif %}
-
+      {% if message %}
+        <div class="message">
+          Encrypted message: {{ message }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}
