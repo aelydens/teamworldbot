@@ -73,3 +73,25 @@ body {
 .padding-top {
   padding-top: 60px;
 }
+
+input#guess:focus {
+  outline:none !important;
+  box-shadow: none !important;
+  border: 1px solid #495057;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.winner {
+  border: 3px solid green !important;
+}
+
+.game.alert-success {
+  display: none;
+}
+
+#puzzle-text {
+  font-size: 26px;
+}
