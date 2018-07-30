@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, json
 from app import app
 from app.forms import EncryptForm, DecryptForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -6,9 +6,11 @@ from app.models import User
 from werkzeug.urls import url_parse
 from app.cody import add_two
 from app.emoji_class import emoji_it
+import random
 import emoji
 import string
 import sys
+import os
 #from app.emoji_class import *
 
 @app.route('/')
@@ -72,6 +74,16 @@ def decrypt():
         return render_template('decrypt.html', form=form, message=message)
 
     return render_template('decrypt.html', form=form)
+
+@app.route('/game', methods=['GET', 'POST'])
+def game():
+    json_url = os.path.join(os.path.realpath(os.path.dirname(__file__)), "static", "puzzles.json")
+    puzzles = json.load(open(json_url))
+
+    puzzle_index = random.randint(0, len(puzzles) - 1)
+    puzzle = puzzles[puzzle_index]
+
+    return render_template('game.html', puzzle=puzzle)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
