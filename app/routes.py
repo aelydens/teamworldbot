@@ -83,6 +83,16 @@ def game():
     puzzle_index = random.randint(0, len(puzzles) - 1)
     puzzle = puzzles[puzzle_index]
 
+    #hot swap the 'encrypted' message.
+    message = puzzle['decrypted']
+    multiplier = random.randint(1, 100)
+
+    emoji_encrypt_class = emoji_it()
+    emoji_encrypt_class.multiplier = multiplier
+    message = emoji_encrypt_class.encrypt(message)
+
+    puzzle['encrypted'] = message
+
     return render_template('game.html', puzzle=puzzle)
 
 @app.route('/login', methods=['GET', 'POST'])
