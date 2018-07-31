@@ -1,38 +1,47 @@
 [
   {
     "encrypted": "📍🐓😥😥🥪 ✂🥪🦕😥🤣",
-    "decrypted": "hello world"
+    "decrypted": "hello world",
+    "hint": "Hint: greetings planet"
   },
   {
     "encrypted": "🧣📍🐓🦕🐓'🎷 🍶🥪 🎢🦕📜🏉🍶🏵 🏉🍶 🗞🚀🎷🐓🗞🚀😥😥",
-    "decrypted": "there's no crying in baseball"
+    "decrypted": "there's no crying in baseball",
+    "hint": "Hint: A League of Their Own"
   },
   {
     "encrypted": "🏉🧣 ✂🚀🎷 🚀 🤣🚀🦕👟 🚀🍶🤣 🎷🧣🥪🦕⛵📜 🍶🏉🏵📍🧣",
-    "decrypted": "it was a dark and stormy night"
+    "decrypted": "it was a dark and stormy night",
+    "hint": "Hint: Paul Clifford"
   },
   {
     "encrypted": "🍶🥪✂🚀🤣🚀📜🎷 🛰🐓🥪🛰😥🐓 👟🍶🥪✂ 🧣📍🐓 🛰🦕🏉🎢🐓 🥪🌹 🐓🎒🐓🦕📜🧣📍🏉🍶🏵 🚀🍶🤣 🧣📍🐓 🎒🚀😥🏫🐓 🥪🌹 🍶🥪🧣📍🏉🍶🏵",
-    "decrypted": "nowadays people know the price of everything and the value of nothing"
+    "decrypted": "nowadays people know the price of everything and the value of nothing",
+    "hint": "Hint: Oscar Wilde"
   },
   {
     "encrypted": "🍶🥪🧣 🚀😥😥 🧣📍🥪🎷🐓 ✂📍🥪 ✂🚀🍶🤣🐓🦕 🚀🦕🐓 😥🥪🎷🧣",
-    "decrypted": "not all those who wander are lost"
+    "decrypted": "not all those who wander are lost",
+    "hint": "Hint: All that is gold does not glitter"
   },
   {
     "encrypted": "⛵📜 🤣🐓🚀🦕, 🍧 🤣🥪🍶’🧣 🏵🏉🎒🐓 🚀 🤣🚀⛵🍶",
-    "decrypted": "my dear, I don’t give a damn"
+    "decrypted": "my dear, I don’t give a damn",
+    "hint": "Hint: Gone with the Wind"
   },
   {
     "encrypted": "🏵🐓🧣 🗞🏫🎷📜 😥🏉🎒🏉🍶🏵 🥪🦕 🏵🐓🧣 🗞🏫🎷📜 🤣📜🏉🍶🏵",
-    "decrypted": "get busy living or get busy dying"
+    "decrypted": "get busy living or get busy dying",
+    "hint": "Hint: Shawshank"
   },
   {
     "encrypted": "🧣🥪🧣🥪, 🍧'🎒🐓 🏵🥪🧣 🚀 🌹🐓🐓😥🏉🍶🏵 ✂🐓'🦕🐓 🍶🥪🧣 🏉🍶 👟🚀🍶🎷🚀🎷 🚀🍶📜⛵🥪🦕🐓",
-    "decrypted": "toto, I've got a feeling we're not in kansas anymore"
+    "decrypted": "toto, I've got a feeling we're not in kansas anymore",
+    "hint": "Hint: Dorothy's dog"
   },
   {
     "encrypted": "🐓.🧣. 🛰📍🥪🍶🐓 📍🥪⛵🐓",
-    "decrypted": "e.t. phone home"
+    "decrypted": "e.t. phone home",
+    "hint": "Hint: Even aliens need an uber"
   }
 ]
