@@ -6,6 +6,7 @@ import emoji
 import string
 import re
 
+
 class emoji_it:
     def __init__(self):
         self.alphabet_lower = string.ascii_lowercase
@@ -15,16 +16,7 @@ class emoji_it:
         self.unicode_emoji = {}  #******
         for key in emoji.EMOJI_UNICODE:
             val = emoji.EMOJI_UNICODE[key]
-            emoji_string =''
-            for item in val:
-                emoji_string = emoji_string + item
-            #if len(emoji.EMOJI_UNICODE[key]) == 1:
-            self.unicode_emoji[key] = emoji_string
-
-        #for item in self.unicode_emoji:
-            #print (item, list(self.unicode_emoji[item]))
-        
-        #print (list(self.unicode_emoji[':sign_of_the_horns_dark_skin_tone:']))    
+            self.unicode_emoji[key] = val
 
         self.emoji_list = list(self.unicode_emoji)
         self.cipher = None
@@ -33,7 +25,6 @@ class emoji_it:
         # default key
         self.emoji_key = ':rocket:'
     
-
     def define_cipher(self):
         #define the alphabet to emoji symbols dictionary for caesar cipher
         # multiplier allows for offseting alphabet, i.e. A=index 1, b=index 3, c = index 5, instead of ABC= index 1,2,3
@@ -79,9 +70,7 @@ class emoji_it:
 
             cipher_dict[str(number)] = emoji_mapping
             count += 1
-
-        #for item in cipher_dict:
-            #print (item, cipher_dict[item]), list (cipher_dict[item])        
+       
         return cipher_dict
 
     def encrypt(self, message):
@@ -111,12 +100,8 @@ class emoji_it:
         if self.cipher == None:
             self.cipher = self.define_cipher()
 
-        # for item in self.cipher:
-        #     print (item, self.cipher[item]), list(self.cipher[item])       
-
         #reverse the cipher
         rev_cipher= {v: k for k, v in self.cipher.items()}
-
   
         decrypted = []
         encrypted_message = (emoji.demojize(encrypted_message))
@@ -127,19 +112,14 @@ class emoji_it:
         line = re.sub(' ', '~', encrypted_message)
         line = re.sub(':', ' ', line)
         line_list = (line.split())
-        
         for symbol in line_list:
             mod_symbol = ':'+symbol+':'
-            #print (mod_symbol)   
             if mod_symbol in rev_cipher:
                 decrypted.append(rev_cipher[mod_symbol])
-            elif mod_symbol == ':~:':
-                decrypted.append(' ')
-            elif mod_symbol == ':,~:':
-                decrypted.append(', ')
-            elif mod_symbol == ':~,:':
-                 decrypted.append(' ,')    
             else:
-                decrypted.append(symbol)
+                mod_symbol = re.sub('~', ' ', mod_symbol)
+                mod_symbol = re.sub(':', '', mod_symbol)
+          
+                decrypted.append(mod_symbol)
 
         return ''.join(decrypted)
