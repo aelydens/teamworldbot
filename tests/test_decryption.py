@@ -9,20 +9,15 @@ def test_decryption_2():
     emojifier = emoji_it()
     assert emojifier.decrypt('🏫⛵ ! ?') == "um ! ?"
 
-#test to ensure unidentified characters are not encoded
-def test_de_chinese_korean():
+#test to ensure only alphabet and numbers are encoded
+def test_de_nonAlphabet_or_numbers():
     emojifier = emoji_it()
-    assert emojifier.decrypt("漢字ㄲ, ㄸ, ㅃ, ㅆ, ㅉ") == '漢字ㄲ, ㄸ, ㅃ, ㅆ, ㅉ'
+    assert emojifier.decrypt("!!!, @, #, $, % ^ & * () _ + - ` ; : ' . , / ? | [ ] { } ") == "!!!, @, #, $, % ^ & * () _ + - ` ; : ' . , / ? | [ ] { } "
 
 #test decrypting numbers
 def test_de_numbers():
     emojifier = emoji_it()
-    assert emojifier.decrypt('🛩💀🙂-🙂🎰🛷-😴😪🙁🙁') == "806-672-3455"
-
-#testing Cody's parsing ':'
-def test_dreaded_colon():
-    emojifier = emoji_it()
-    assert emojifier.decrypt(':hey::') == ":hey::"
+    assert emojifier.decrypt('⛷🤘🕡-🕡🕕🤘🏻-🤘🏾🤘🏼🤘🏽🤘🏽') == "806-672-3455"
 
 #testing empty input
 def test_empty_input():
