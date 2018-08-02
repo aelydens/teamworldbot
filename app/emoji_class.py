@@ -4,6 +4,8 @@ __author__ = 'jcovino'
 
 import emoji
 import string
+import re
+
 
 class emoji_it:
     def __init__(self):
@@ -12,11 +14,9 @@ class emoji_it:
         self.numbers = list(range(0, 10, 1))
 
         self.unicode_emoji = {}  #******
-
         for key in emoji.EMOJI_UNICODE:
             val = emoji.EMOJI_UNICODE[key]
-            if len(emoji.EMOJI_UNICODE[key]) == 1:
-                self.unicode_emoji[key] = val
+            self.unicode_emoji[key] = val
 
         self.emoji_list = list(self.unicode_emoji)
         self.cipher = None
@@ -24,7 +24,7 @@ class emoji_it:
         self.multiplier = 1
         # default key
         self.emoji_key = ':rocket:'
-
+    
     def define_cipher(self):
         #define the alphabet to emoji symbols dictionary for caesar cipher
         # multiplier allows for offseting alphabet, i.e. A=index 1, b=index 3, c = index 5, instead of ABC= index 1,2,3
@@ -70,7 +70,7 @@ class emoji_it:
 
             cipher_dict[str(number)] = emoji_mapping
             count += 1
-
+       
         return cipher_dict
 
     def encrypt(self, message):
@@ -80,7 +80,7 @@ class emoji_it:
         # returns encyrpted message in Emoji
 
         if self.cipher == None:
-            self.cipher = self.define_cipher()
+            self.cipher = self.define_cipher()             
 
         encrypted_message = ""
         for letter in message:
@@ -89,7 +89,7 @@ class emoji_it:
             else:
                 encrypted_message += letter
 
-        return emoji.emojize(encrypted_message)
+        return emoji.emojize(encrypted_message, use_aliases=False)
 
 
     def decrypt(self, encrypted_message):
@@ -102,15 +102,24 @@ class emoji_it:
 
         #reverse the cipher
         rev_cipher= {v: k for k, v in self.cipher.items()}
-
+  
         decrypted = []
+        encrypted_message = (emoji.demojize(encrypted_message))
 
-        for symbol in encrypted_message:
-            symbol = emoji.demojize(symbol)
-
-            if symbol in rev_cipher:
-                decrypted.append(rev_cipher[symbol])
+        # this handles the combination character emojis- like sign_of_the_horns_light_skin_tone
+        # a space is designated with a ~
+        # then lines are split based on :
+        line = re.sub(' ', '~', encrypted_message)
+        line = re.sub(':', ' ', line)
+        line_list = (line.split())
+        for symbol in line_list:
+            mod_symbol = ':'+symbol+':'
+            if mod_symbol in rev_cipher:
+                decrypted.append(rev_cipher[mod_symbol])
             else:
-                decrypted.append(symbol)
+                mod_symbol = re.sub('~', ' ', mod_symbol)
+                mod_symbol = re.sub(':', '', mod_symbol)
+          
+                decrypted.append(mod_symbol)
 
         return ''.join(decrypted)
