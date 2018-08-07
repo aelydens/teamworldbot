@@ -92,6 +92,10 @@ input#guess:focus {
   display: none;
 }
 
-#puzzle-text {
+.puzzle-text {
   font-size: 26px;
+}
+
+#emoji-puzzle {
+  word-spacing: 15px
 }

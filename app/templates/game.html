@@ -9,9 +9,9 @@
     <div class="row">
       <div class="col-md-12" id="puzzle" data-value="{{ puzzle['decrypted'] }}">
         <p>Solve this message:</p>
-        <p id="puzzle-text">{{ puzzle['encrypted'] }}</p>
+        <p class="puzzle-text" id="emoji-puzzle">{{ puzzle['encrypted'] }}</p>
         <br>
-        <p id="puzzle-text">{{ puzzle['hint'] }}</p>
+        <p class="puzzle-text">{{ puzzle['hint'] }}</p>
         <br>
         <p>Your progress:
           <span class="float-right guess-progress">0%</span>
