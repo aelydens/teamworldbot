@@ -54,7 +54,7 @@ def encrypt():
 def decrypt():
     form = DecryptForm()
     if form.validate_on_submit():
-        
+
         #received message from form
         message = form.message.data
         multiplier = form.multiplier.data
@@ -94,22 +94,3 @@ def game():
     puzzle['encrypted'] = message
 
     return render_template('game.html', puzzle=puzzle)
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('admin'))
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid login credentials')
-            return redirect(url_for('login'))
-        login_user(user)
-        return redirect(url_for('admin'))
-    return render_template('login.html', form=form)
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
